@@ -46,6 +46,8 @@ To install the PPD file into CUPS, walk through the "Add Printer" workflow. When
 
 PPD files are available in the `ppd/` folder of this repo, or can be made by modifying the "official" ppd files provided by the manufacturer (see: Converting PPD Files below).
 
+To determine which filter to install, use `uname -a` to determine your system architecture.
+
 To install the filter, select the correct filter from the `filters` directory of this repo, un-gzip it, and `sudo cp` it to the appropriate location containing your CUPS filters. For me, this means copying it to `/usr/lib/cups/filter/`
 
 
@@ -65,7 +67,11 @@ The `raster-tspl` provided in this package is **explicitly not** the same as the
 
 This version instead is based on the official `rastertolabel` filter, integrating the the [modifications made by Proski](https://github.com/proski/cups) to create a suitable filter that functions for the printers listed above.
 
-This filter is compiled against the version of CUPS that I have installed on my Raspberry Pi (which I believe is the default that comes with Buster). 
+The armv7 filter is compiled against the version of CUPS that I have installed on my Raspberry Pi (which I believe is the default that comes with Buster). 
+
+The aarch64 filter is compiled against the proski cups repository mentioned above. Specifically, this revision:
+
+`commit bfdcaad258f58ab512da0bdc1457dc963a25cf8c`
 
 
 ### Code modifications required to make the filter work
