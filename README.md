@@ -15,6 +15,7 @@ There are a number of printers which all seem to share the same underlying hardw
 ### Tested Printers
 
 - iDPRT SP420
+- FORCE LABEL 9250 (9x00 series)
 
 
 ### Untested, but expected to work
